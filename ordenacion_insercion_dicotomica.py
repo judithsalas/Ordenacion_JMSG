@@ -18,33 +18,6 @@ Efecto:
 
 Postcondición:
 - Después de la ejecución del algoritmo, los elementos de la tabla están ordenados en orden creciente.
-
-PROCEDIMIENTO OrdenacionInsercionDicotomica(t)
-    PARA CADA elemento EN t DESDE i = 1 HASTA longitud(t) - 1 HACER
-        clave = elemento
-        INICIO = 0
-        FIN = i - 1
-        
-        // Búsqueda binaria para encontrar la posición de inserción
-        MIENTRAS INICIO <= FIN
-            MITAD = (INICIO + FIN) / 2
-            SI t[MITAD] < clave ENTONCES
-                INICIO = MITAD + 1
-            SINO
-                FIN = MITAD - 1
-            FIN SI
-        FIN MIENTRAS
-        
-        // Desplazar los elementos para hacer espacio para la inserción
-        PARA j = i HASTA INICIO + 1 CON PASO -1 HACER
-            t[j] = t[j - 1]
-        FIN PARA
-        
-        // Insertar el elemento en su posición correcta
-        t[INICIO] = clave
-    FIN PARA
-FIN PROCEDIMIENTO
-
 '''
 def ordenacion_insercion_dicotomica(t):
     # Recorremos la lista desde el segundo elemento hasta el último
